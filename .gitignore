@@ -1,0 +1,11 @@
+# editor
+*.swp
+.idea/
+.vscode/
+
+# node/python junk if anyone drops files here
+node_modules/
+.venv/
+dist/
+build/
+.DS_Store
