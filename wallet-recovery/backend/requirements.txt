@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+motor
+python-gnupg
+python-jose
+passlib[bcrypt]
+httpx
+tenacity

@@ -1,11 +1,10 @@
-# editor
-*.swp
-.idea/
-.vscode/
-
-# node/python junk if anyone drops files here
 node_modules/
-.venv/
+.next/
 dist/
-build/
+frontend/.next/
+frontend/node_modules/
+backend/venv/
+__pycache__/
+*.pyc
 .DS_Store
+.env

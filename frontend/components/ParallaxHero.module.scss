@@ -1,0 +1,29 @@
+@use '../styles/utils/variables' as *;
+@use '../styles/utils/mixins' as *;
+
+.hero {
+  background-image:     -gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url('/hero-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll; // we update position via JS
+  background-position: center 0;
+  color: #fff;
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+}
+
+.inner {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 960px;
+}
+
+h1 { font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; }
+p  { margin: 0 0 1.25rem; opacity: .95; }
+
+.cta {
+  @include button($brand, #fff);
+  text-decoration: none;
+  font-weight: 600;
+}
