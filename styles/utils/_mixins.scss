@@ -1,0 +1,18 @@
+@mixin button($bg:$brand, $fg:#fff) {
+  background: $bg;
+  color: $fg;
+  border: 0;
+  border-radius: $radius;
+  padding: .65rem 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter .15s ease;
+  &:hover { filter: brightness(1.05); }
+  &:active { filter: brightness(.95); }
+}
+
+@mixin container {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
+}

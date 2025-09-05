@@ -1,0 +1,22 @@
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+.hero {
+  position: relative;
+  padding: 18vh 0;
+  background:
+    radial-gradient(1000px 400px at 10% 10%, rgba(255,255,255,.06), transparent 60%),
+    radial-gradient(800px 400px at 90% 20%, rgba(255,255,255,.04), transparent 60%),
+    linear-gradient(45deg, $brand, lighten($brand, 14%));
+  overflow: hidden;
+  box-shadow: $shadow;
+}
+
+.inner { @include container; text-align: center; }
+
+.title { font-size: clamp(2.2rem, 4vw + 1rem, 4.2rem); line-height: 1.1; margin: 0 0 1rem; }
+.subtitle { font-size: clamp(1rem, 1vw + .8rem, 1.25rem); opacity: .9; margin: 0 0 1.75rem; }
+.ctas { display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+
+.btnPrimary { @include button($brand, #fff); }
+.btnGhost { @include button(transparent, $text); outline: 1px solid rgba(255,255,255,.25); }
