@@ -3,7 +3,7 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package*.json ./
-# Deterministic if lockfile exists; fallback for first-time runs
+# Use npm ci when lockfile exists, fallback to install otherwise
 RUN --mount=type=cache,target=/root/.npm npm ci || npm install
 
 # ---- builder ----
@@ -12,11 +12,11 @@ WORKDIR /app
 COPY . .
 RUN --mount=type=cache,target=/root/.npm npm run build
 
-# ---- runtime ----
+# ---- runtime (no next CLI required) ----
 FROM node:20-alpine AS runner
 ENV NODE_ENV=production
 WORKDIR /app
-# Next standalone output contains server.js and minimal node_modules
+# Copy Next standalone output
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public

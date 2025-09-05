@@ -1,5 +1,5 @@
-@use 'utils/variables' as v;
-@use 'utils/mixins' as m;
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -8,7 +8,7 @@ body {
   font-family:
     ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu,
     Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  background: v.$bg;
-  color: v.$text;
+  background: $bg;
+  color: $text;
 }
 a { color: inherit; text-decoration: none; }
